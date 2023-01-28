@@ -27,7 +27,9 @@ ls ../../ubuntu
 pwd /home/ubuntu/Pictures
 
 10.Zobacz do jakiego katalogu przejdziesz za pomocą ścieżki ././././././
-Pokazało ze jest to katalog ale nigdzie sie nie przenieslismy
+Dlatego tak się stało ponieważ użyliśmy ścieżki względnej, w której kropka oznacza bieżący katalog, czyli
+ tak naprawdę ciągle przenosiliśmy się do tego samego katalogu i dodanie więcej ./././ nic by nie zmieniło
+ bo oznacza ciągle to samo
 
 11.Przejdź do swojego katalogu domowego za pomocą ścieżki bezwzględnej.
 cd ~ wpisalismy znak tyldu ktory oznacza katalog domowy

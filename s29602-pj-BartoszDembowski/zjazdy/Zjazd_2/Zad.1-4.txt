@@ -184,47 +184,86 @@ ls: nie można otworzyć katalogu './katalog': Brak dostępu
 s29602@szuflandia22:~/katalogi/katalog1$ cd -
 -bash: cd: /home/PJWSTK/s29602/katalogi/katalog1/katalog: Brak dostępu
 s29602@szuflandia22:~/katalogi/katalog1$
-3.W zespołach 2- lub 3-osobowych (w opisie zadania na githubie proszę umieścić login osób z zespołu) wypróbować możliwość komunikacji przez współdzielony
- plik: na jednym z kont w zespole utworzyć pusty plik i przydzielić odpowiednie uprawnienia dostępu (do pliku i do katalogu domowego). Wpisywać i odczytywać komunikaty przy użyciu poleceń:
+3.3Zad.
+W zespołach 2- lub 3-osobowych (w opisie zadania na githubie proszę umieścić login osób z zespołu) wypróbować możliwość komunikacji przez współdzielony plik: na jednym z kont w zespole utworzyć pusty plik i przydzielić odpowiednie uprawnienia dostępu (do pliku i do katalogu domowego). Wpisywać i odczytywać komunikaty przy użyciu poleceń:
 
-echo treść_komunikatu > plik
+Zadanie.Bartosz Dembowski,Michał Gwardyś(s26965)
+s29602@szuflandia22:~$ ls
+katalogi  ls  public_html  test  windows
+s29602@szuflandia22:~$ mkdir katalogogolny
+s29602@szuflandia22:~$ cd katalogogolny/
+s29602@szuflandia22:~/katalogogolny$ touch cos.txt
+s29602@szuflandia22:~/katalogogolny$ chmod u+r cos.txt
+s29602@szuflandia22:~/katalogogolny$ cd ..
+s29602@szuflandia22:~$ chmod u+r katalogogolny/
+s29602@szuflandia22:~$ ls -l
+razem 68
+(Uprawnienia dla pliku to read,write,execute)
+drwxrwxrwx 5 s29602 domain users  4096 12-03 21:32 katalogi
+drwxr-xr-x 2 s29602 domain users  4096 01-29 00:18 katalogogolny
+-rw-r--r-- 1 s29602 domain users 46069 12-02 16:57 ls
+drwxr-xr-x 2 s29602 domain users  4096 01-26 20:38 public_html
+drwxrwxrwx 2 s29602 domain users  4096 01-26 21:06 test
+drwxr-xr-x 4 s29602 domain users  4096 12-03 23:12 windows
+echo treść_komunikatu > plik,cat plik
 
-cat plik
-Sprawdzić, jaki skutek powoduje zamiana operatora > na operator >> w poleceniu echo. Uruchom także drugi terminal i wykonaj w nim komendę tail -f plik i
- powtórz powyższe ćwiczenie w pierwszym terminalu (komunikacja za pomocą pliku).
+s26965@szuflandia22:/home/PJWSTK/s29602/katalog_wszyscy$ echo tresc > elo.txt
+s26965@szuflandia22:/home/PJWSTK/s29602/katalogogolny$ cat cos.txt
+tresc
+S26965@szuflandia22:/home/PJWSTK/s29602/katalogogolny$
 
-Nie pamientalem ze trzeba to zrobic w grupach zadanie zostanie oddane wieczorem w niedziele
+Uruchom także drugi terminal i wykonaj w nim komendę tail -f plik i powtórz powyższe ćwiczenie w pierwszym terminalu (komunikacja za pomocą pliku).
+tail -f-na żywo sprawdza co jest zapisywane w pliku
+
+
+
 
 
 ZAD4.Znaleźć w swoim katalogu domowym podkatalog public_html (jeśli go nie ma, to utworzyć; musi się on nazywać DOKŁADNIE tak jak podano, pisane małymi literami z
- podkreśleniem zamiast spacji pomiędzy słowami). Umieścić w nim plik o nazwie strona.html o następującej zawartości:
+ podkreśleniem zamiast spacji pomiędzy słowami). Umieścić w nim plik o nazwie strona.html o następującej zawartoś
+
 s29602@szuflandia22:~$ ls
 katalogi  ls  windows
-s29602@szuflandia22:~$ cd windows
-s29602@szuflandia22:~/windows$ ls
-desktop
-s29602@szuflandia22:~/windows$ cd desktop
-s29602@szuflandia22:~/windows/desktop$ ls
-'$RECYCLE.BIN'  'Adobe Lightroom Classic.lnk'   desktop.ini   Lightroom.lnk  'Microsoft Teams.lnk'   repos
-s29602@szuflandia22:~/windows/desktop$ cd ../
-s29602@szuflandia22:~/windows$ mkdir public_html
-s29602@szuflandia22:~/windows$ cd
-desktop/     public_html/
-s29602@szuflandia22:~/windows$ cd public_html
-s29602@szuflandia22:~/windows/public_html$ mkdir strona.html
-s29602@szuflandia22:~/windows/public_html$ rmdir strona.html
-s29602@szuflandia22:~/windows/public_html$ touch strona.html
-s29602@szuflandia22:~/windows/public_html$ nano strona.html
-s29602@szuflandia22:~/windows/public_html$ nano strona.html
-s29602@szuflandia22:~/windows/public_html$ s29602@szuflandia22:~/windows/public_html$ cd ../
-s29602@szuflandia22:~/windows$ ls -l
-razem 12
-drwxrwx--x+ 4 s29602 domain users 4096 12-03 10:50 desktop
-drwxr-xr-x  2 s29602 domain users 4096 12-03 23:15 public_html
-s29602@szuflandia22:~/windows$ cd public_html
-s29602@szuflandia22:~/windows/public_html$ ls -l
+s29602@szuflandia22:~$ mkdir public_html
+s29602@szuflandia22:~$ ls
+katalogi  ls  public_html  windows
+s29602@szuflandia22:~$ cd public_html
+s29602@szuflandia22:~/public_html$ touch strona.html
+s29602@szuflandia22:~/public_html$ nano strona.html
+s29602@szuflandia22:~/public_html$ ls -l
 razem 4
--rw-r--r-- 1 s29602 domain users 71 12-03 23:15 strona.html
-katalogom trzeba przydzielic mnimalnie x
-plikom trzeba przydzielic minimalnie r
+-rw-r--r-- 1 s29602 domain users 68 01-26 20:38 strona.html
+
+Katalogom trzeba przydzielić minimalnie x
+Plikom trzeba przydzielić minimalnie r
+
+Zadanie
+W opisie bash-a (man) przeczytać opis polecenia wewnętrznego umask i wypróbować jego działanie sprawdzając, a następnie zmieniając swoją maskę trybu pliku i tworząc
+ za każdym razem nowe pliki (przy użyciu polecenia touch plik), a później sprawdzając uzyskane uprawnienia dostępu do nich (polecenie ls -l). Jaka operacja logiczna
+ na bitach domyślnych uprawnień dostępu oraz maski jest wykonywana ? 
+ s29602@szuflandia22:~$ mkdir test
+s29602@szuflandia22:~$ cd test
+s29602@szuflandia22:~/test$ umask
+0000
+s29602@szuflandia22:~/test$ umask
+0000
+s29602@szuflandia22:~/test$ touch pierwszy.txt
+s29602@szuflandia22:~/test$ ls -l
+razem 0
+-rw-rw-rw- 1 s29602 domain users 0 01-26 21:04 pierwszy.txt
+s29602@szuflandia22:~/test$ umask 666
+s29602@szuflandia22:~/test$ touch drugi.txt
+s29602@szuflandia22:~/test$ ls -l
+razem 0
+---------- 1 s29602 domain users 0 01-26 21:06 drugi.txt
+-rw-rw-rw- 1 s29602 domain users 0 01-26 21:04 pierwszy.txt
+s29602@szuflandia22:~/test$ umask 743
+s29602@szuflandia22:~/test$ touch trzeci.txt
+s29602@szuflandia22:~/test$ ls -l
+razem 0
+---------- 1 s29602 domain users 0 01-26 21:06 drugi.txt
+-rw-rw-rw- 1 s29602 domain users 0 01-26 21:04 pierwszy.txt
+-----w-r-- 1 s29602 domain users 0 01-26 21:06 trzeci.txt
+Jest wykonywana na negacji.
+ 
 

@@ -1,11 +1,26 @@
 ZAD0.ROZGRZEWKOWE
-1.Odpalamy terminal
-2/3.Dosyć dużo plików
-4/5.Wydałem komende i wyświetliły mi się wszyskie na litere d
-6/7.Utworzył mi się plik z końcówką .txt
+1.Przejdź do swojego katalogu domowego
+Odpalamy terminal
+2/3.Wydaj komendę: ls -a
+Zobacz ile plików wypisało.
+Dosyć dużo plików
+4/5.Teraz wydaj komendę: ls -a | grep D
+HINT: Jeśli nie masz żadnego pliku czy katalogu z literką D to wybierz inną literkę, która już będzie w nazwie jakiegoś pliku czy katalogu.
+Zobacz ile teraz jest wyników. Co się stało?
+Otóż program grep służy do wyszukiwania wierszy w pliku lub strumieniu wejściowym, które pasują do wzorca. Tu podano wzorzec jako "D".
+Wydałem komende i wyświetliły mi się wszyskie na litere d
+6/7.A teraz wykonaj komendę: ls -a | grep D > lista_plikow_z_literka_d.txt
+Zobacz czy utworzył sie jakiś plik?
+Jaka jest jego treść?
+Co znaczy | oraz co znaczy > ?
+Utworzył mi się plik z końcówką .txt
 |-Przekierowanie standardowego wyjścia (stdout) do pliku (nadpisywanie)
 > przekierowanie zawartości pliku
-8/9.Tak plik się utworzył
+8/9.A teraz wykonaj komendę: ls -a | grep D | tee lista_plikow_z_literka_d_2.txt
+Zobacz czy plik się utworzył?
+Jaka jest treść względem poprzedniej próby bez programu tee?
+Co robi program tee?
+Tak plik się utworzył
 Jaka jest treść względem poprzedniej próby bez programu tee?
 Plik otworzyl swoja zawartosc
 Co robi program tee?
@@ -25,6 +40,7 @@ Jak myślisz, co oznacza znak zapytania w kolumnie 2?
 Nie wiesz? A gdzie może być wyjaśnienie?
 Moze byc wyjasnione na cwiczeniach albo poszukac w internecie
 Oznacza:powloke termina tty ktore byly pokazywane w terminalu ctrl+alt+np.F1
+Jezeli jest znak ? oznacza to że nie ma terminala przepisanego
 ZAD1.B.
 1.Wyświetl wszystkie procesy bash
 ps aux | grep bash 
@@ -127,6 +143,4 @@ Kolejna komenda to jobs. Służy ona do wyświetlania listy zadań (jobów; nie 
 
 1.Przywróć program gedit (lub gimp, w każdym razie nie uruchomiony jako ostatni program) z tła na pierwszy plan. Skorzystaj z jobs aby dowiedzieć się jakie mają numery poszczególne zadania działające w tle.
 składnia: fg %(numer jobu)
-fg %1 zablokowal sie terminal i gedit przestal dzialac
-
-
+fg %1 zalezy od numeru program jobs ktory jak wpiszemy pokazuje nam w terminalu numery zadan i jaki wybierzemy numer przywraca go
