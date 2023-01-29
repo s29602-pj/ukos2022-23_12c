@@ -22,7 +22,7 @@ ubuntu@bss-ubu1804:~/tmp/ukos/ala/ma/kota$ mkdir -p ../../../kot/ma/ale/jan/kowa
 4 Jak zamknąć program, który nie reaguje na ctrl+c ?
 Jak robliśmy to użyłbym: (kill -9 )
 5 Jak wypisać wszystkie pliki w bieżącym katalogu, których nazwa zaczyna się od al?
-Tak robiliśmy na ćwiczeniach: (ls | grep ^ al)
+Tak robiliśmy na ćwiczeniach: (ls | grep ^al)
 
 6 Nadaj uprawnienia do katalogu ala tak aby:
 -każdy mógł do niego wejść
@@ -34,12 +34,7 @@ Przygotuj 3 wariacje rozwiązania tego zadania używając różnych notacji:
 -literowej ze znakiem równości
 -literowej z plusami i minusami
 Wszystkie wersje powinny być zapisane w jednym poleceniu (bez używania && czy | )
-1.oktalnej/ósemkowej/cyfrowej- chmod 741 ala
-2.literowej ze znakiem równośc- chmod u=rwx,g=rx,o=x ala
-3.literowej z plusami i minusami- chmod u+w,ug+r,a+x,go-w,o-r ala
-
-
-
+chmod 741 ala lub chmod u=rwx, g=rx, o=x ala lub chmod u+w,ug+r,a+x,go-w,o-r ala
 
 
 7 Jak utworzyć plik z listą plików w bieżącym katalogu?
